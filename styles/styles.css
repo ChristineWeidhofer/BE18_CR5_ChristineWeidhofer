@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+/*------------- general ----------------------*/
+
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+}
+
+body {
+  margin-top: 2rem;
+  background-color: #F2F5FB;
+  background-image: url('../assets/img/hero-bg.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #4154f1;
+  text-decoration: none!important;
+}
+
+a:hover {
+  color: #717ff5;
+  text-decoration: none!important;
+}
+
+/*------------------------------ */
+
+div.login {
+  width: 30%;
+  height: 170%;
+  position: absolute;
+  right: 0px;
+  top: 300px;
+  background-image: url('../assets/img/features-3.png');
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+  color: #012970;
+}
+
+.manageProduct {          
+  margin: auto;
+}
+
+.hero {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(24deg, rgb(66, 84, 241) 20%, rgb(255, 90, 124) 100%);
+}
+
+.img-thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.user {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+}
+
+.img-bigger {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 5px solid white;
+  border-radius: 1rem;
+}
+
+th {
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+}
+
+td, th {          
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr {
+  text-align: center;
+}
+
+button {
+  margin: .5rem;
+  transition: all 0.3s ease-in-out!important;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.btn-secondary {
+  background-color: #FF5A7C;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #f69bad;
+  color: black;
+  border: none;
+}
+
+.btn-tertiary {
+  background-color: #4254F1;
+  color: white;
+  border: none;
+}
+
+.btn-tertiary:hover {
+  background-color: #717ff5;
+  color: white;
+  border: none;
+}
+
+.btn-success {
+  background-color: rgb(40, 79, 40);
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: rgb(83, 106, 83);
+  border: none;
+}
+
+.log-con-form {
+  width: 75%;
+}
+
+@media screen and (max-width: 374px){
+  .mtxs {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .log-con-form {
+    width: 100%;
+  }
+}
