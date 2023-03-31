@@ -21,22 +21,13 @@ if ($_GET['id']) {
         $data = mysqli_fetch_assoc($result);
         $name = $data['name'];
         $descr = $data['descr'];
-        $price = $data['price'];
+        $breed = $data['breed'];
         $picture = $data['picture'];
-        $supplier = $data['fk_supplierId'];
-        $resultSup = mysqli_query($connect, "SELECT * FROM suppliers");
-        $supList = "";
-        if  (mysqli_num_rows($resultSup) > 0) {
-            while ($row = $resultSup->fetch_array(MYSQLI_ASSOC)) {
-                if ($row['supplierId'] == $supplier) {
-                    $supList .= "<option selected value='{$row['supplierId']}'>{$row['sup_name']}</option>";
-                } else  {
-                    $supList .= "<option value='{$row['supplierId']}'>{$row['sup_name']}</option>" ;
-                }
-            }
-        } else {
-            $supList = "<li>There are no suppliers registered</li>";
-        }
+        $size = $data['size'];
+        $age = $data['age'];
+        $location = $data['location'];
+        $vaccinated = $data['vaccinated'];
+        $status = $data['status'];
     } else {
         header("location: error.php");
     }
@@ -52,41 +43,63 @@ if ($_GET['id']) {
         <title>Edit Pet</title>
         <?php require_once '../components/boot.php'?>
         <link rel="stylesheet" href="../styles/styles.css">
-        <style type= "text/css">
-            .img-thumbnail{
-                width: 100px !important;
-                height: 100px !important;
-            }     
-        </style>
     </head>
     <body>
         <fieldset class="w-75 mx-auto my-5">
             <h2 class="text-center text-sm-start">Update request <img class='img-thumbnail rounded-circle ms-4' src='../pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></h2>
             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
                 <table class="table">
-                    <tr>
+                <tr>
                         <th>Name</th>
-                        <td><input class="form-control" type="text"  name="name" placeholder ="Pet Name" value="<?php echo $name ?>"  /></td>
-                    </tr>
+                        <td><input class='form-control' type="text" name="name"  placeholder="Pet Name" value="<?php echo $name ?>"/></td>
+                    </tr>    
                     <tr>
                         <th>Description</th>
-                        <td><input class="form-control" type="text"  name="descr" placeholder ="Description" value="<?php echo $descr ?>"  /></td>
+                        <td><input class='form-control' type="text" name="descr"  placeholder="Pet Description" value="<?php echo $descr ?>"/></td>
+                    </tr>  
+                    <tr>
+                        <th>Breed</th>
+                        <td><input class='form-control' type="text" name="breed"  placeholder="Breed" value="<?php echo $breed ?>"/></td>
+                    </tr> 
+                    <tr>
+                        <th>Size</th>
+                        <td><input class='form-control' type="number" name= "size" placeholder="Size" step="any" value="<?php echo $size ?>"/></td>
                     </tr>
                     <tr>
-                        <th>Price</th>
-                        <td><input class="form-control" type= "number" name="price" step="any"  placeholder="Price" value ="<?php echo $price ?>" /></td>
+                        <th>Age</th>
+                        <td><input class='form-control' type="number" name= "age" placeholder="Age" step="any" value="<?php echo $age ?>"/></td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td>
+                        <select class='form-select' type="text" name="location" id="location">
+                            <option value="Wien">Wien</option>
+                            <option value="Graz">Graz</option>
+                            <option value="Linz">Linz</option>
+                        </select>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <th>Vaccinated</th>
+                        <td>
+                        <select class='form-select' type="text" name="vaccinated" id="vaccinated">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                        <select class='form-select' type="text" name="status" id="status">
+                            <option value="Available">Available</option>
+                            <option value="Adopted">Adopted</option>
+                        </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Picture</th>
-                        <td><input class="form-control" type="file" name= "picture" /></td>
-                    </tr>
-                    <tr>
-                        <th>Supplier</th>
-                        <td>
-                            <select class="form-select" name="supplier" aria-label="Select supplier">
-                                <?php echo $supList; ?>
-                            </select>
-                        </td>
+                        <td><input class='form-control' type="file" name="picture" /></td>
                     </tr>
                     <tr>
                         <input type= "hidden" name= "id" value= "<?php echo $data['id'] ?>" />

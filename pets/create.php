@@ -37,8 +37,44 @@ if (!isset ($_SESSION['adm']) && !isset($_SESSION['user'])) {
                         <td><input class='form-control' type="text" name="descr"  placeholder="Pet Description" /></td>
                     </tr>  
                     <tr>
+                        <th>Breed</th>
+                        <td><input class='form-control' type="text" name="breed"  placeholder="Breed" /></td>
+                    </tr> 
+                    <tr>
+                        <th>Size</th>
+                        <td><input class='form-control' type="number" name= "size" placeholder="Size" step="any" /></td>
+                    </tr>
+                    <tr>
                         <th>Age</th>
                         <td><input class='form-control' type="number" name= "age" placeholder="Age" step="any" /></td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td>
+                        <select class='form-select' type="text" name="Location" id="location">
+                        <option value="Wien">Wien</option>
+                        <option value="Graz">Graz</option>
+                        <option value="Linz">Linz</option>
+                        </select>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <th>Vaccinated</th>
+                        <td>
+                        <select class='form-select' type="text" name="vaccinated" id="vaccinated">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                        <select class='form-select' type="text" name="status" id="status">
+                        <option value="Available">Available</option>
+                        <option value="Adopted">Adopted</option>
+                        </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Picture</th>

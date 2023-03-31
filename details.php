@@ -23,11 +23,17 @@ if(mysqli_num_rows($result)  > 0) {
   $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
     $tbody = "<tr>
 
-      <td><img class='img-bigger' src='pictures/" .$row['picture']. "'</td></tr>
-      <tr><td><h3>" .$row['name']."</h3></td></tr>
-      <tr><td>" .$row['descr']."</td>
+    <td><img class='img-bigger' src='./pictures/" .$row['picture']. "'</td></tr>
 
-      </tr>";
+    <tr><td>" .$row['descr']."</td>
+    <tr><td>" .$row['breed']."</td>
+    <tr><td>" .$row['size']."</td>
+    <tr><td>" . $row['age'] . "</td> 
+    <tr><td>" .$row['location']."</td>
+    <tr><td>" .$row['vaccinated']."</td>
+    <tr><td>" .$row['status']."</td>
+
+    </tr>";
   } else {
   $tbody =  "<tr><td colspan='5'><center>No Data Available </center></td></tr>";
 }

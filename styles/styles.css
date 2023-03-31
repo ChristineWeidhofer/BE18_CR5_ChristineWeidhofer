@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
-/*------------- general ----------------------*/
+/* ------------- general ---------------------- */
 
 :root {
   scroll-behavior: smooth;
@@ -35,7 +35,17 @@ a:hover {
   text-decoration: none!important;
 }
 
-/*------------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+  color: #012970;
+}
+
+/* -------------- illustrations bottom right ---------------- */
 
 div.login {
   width: 30%;
@@ -47,19 +57,11 @@ div.login {
   background-size: cover;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Nunito", sans-serif;
-  color: #012970;
-}
-
 .manageProduct {          
   margin: auto;
 }
+
+/* -------------- images ------------------ */
 
 .hero {
   background: rgb(2, 0, 36);
@@ -73,8 +75,8 @@ h6 {
 }
 
 .user {
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -85,6 +87,8 @@ h6 {
   border: 5px solid white;
   border-radius: 1rem;
 }
+
+/* -------------------- tables ---------------------- */
 
 th {
   text-transform: uppercase;
@@ -99,6 +103,8 @@ td, th {
 tr {
   text-align: center;
 }
+
+/* -------------------- buttons ---------------------- */
 
 button {
   margin: .5rem;
@@ -141,6 +147,8 @@ button:hover {
   background-color: rgb(83, 106, 83);
   border: none;
 }
+
+/* ----------------- responsive styling ---------------------- */
 
 .log-con-form {
   width: 75%;

@@ -18,18 +18,26 @@ require_once  '../../components/file_upload.php';
 if ($_POST) {    
     $name = $_POST['name'];
     $descr = $_POST['descr'];
-    $price = $_POST['price'];
+    $breed = $_POST['breed'];
+    $picture = $_POST['picture'];
+    $size = $_POST['size'];
+    $age = $_POST['age'];
+    $location = $_POST['location'];
+    $vaccinated = $_POST['vaccinated'];
+    $status = $_POST['status'];
 
     $id = $_POST['id'];
-    //variable for upload pictures errors is initialised
+
     $uploadError = '';
 
     $picture = file_upload($_FILES['picture'], 'product');//file_upload() called  
     if($picture->error===0){
         ($_POST["picture"]=="product.png")?: unlink("../../pictures/$_POST[picture]");           
-        $sql = "UPDATE animals SET name = '$name', price = $price, picture = '$picture->fileName', fk_supplierId = $supplier WHERE id = {$id}" ;
+        // $sql = "UPDATE animals SET name = '$name', price = $price, picture = '$picture->fileName', fk_supplierId = $supplier WHERE id = {$id}" ;
+        $sql = "UPDATE `animals` SET `name`='$name',`breed`='$breed',`picture`='$picture->fileName',`descr`='$descr',`size`='$size',`age`='$age',`location`='$location',`vaccinated`='$vaccinated',`status`='$status' WHERE id = {$id}";
     }else{
-        $sql = "UPDATE animals SET name = '$name', price = $price, fk_supplierId = $supplier WHERE id = {$id}" ;
+        // $sql = "UPDATE animals SET name = '$name', price = $price, fk_supplierId = $supplier WHERE id = {$id}" ;
+        $sql = "UPDATE `animals` SET `name`='$name',`breed`='$breed',`descr`='$descr',`size`='$size',`age`='$age',`location`='$location',`vaccinated`='$vaccinated',`status`='$status' WHERE id = {$id}";
     }    
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
@@ -57,7 +65,7 @@ if ($_POST) {
     <body>
         <div class="container">
             <div class="mt-3 mb-3">
-                <h1>Update request response</h1>
+                <h1>Everything went well?</h1>
             </div>
             <div class="alert alert-<?php echo $class;?>" role="alert">
                 <p><?php echo ($message) ?? ''; ?></p>

@@ -16,19 +16,18 @@ require_once  '../../components/file_upload.php';
 
 if ($_POST) {   
     $name = $_POST['name'];
+    $breed = $_POST['breed'];
     $descr = $_POST['descr'];
-    $price = $_POST['price'];
-    $supplier = $_POST['supplier'];
+    $size = $_POST['size'];
+    $age = $_POST['age'];
+    $location = $_POST['location'];
+    $vaccinated = $_POST['vaccinated'];
+    $status = $_POST['status'];
     $uploadError = '';
     //this function exists in the service file upload.
     $picture = file_upload($_FILES['picture'], 'product');  
 
-    if ($supplier == 'none') {
-        //checks if the supplier is undefined and insert null in the DB
-        $sql = "INSERT INTO animals (name, price, picture, fk_supplierId) VALUES ('$name', $price, '$picture->fileName', null)" ;
-    } else {
-        $sql = "INSERT INTO animals (name, price, picture, fk_supplierId) VALUES ('$name', $price, '$picture->fileName', $supplier)" ;
-    }
+    $sql = "INSERT INTO animals (name, breed, picture, descr, size, age, location, vaccinated, status) VALUES ('$name', '$breed', '$picture->fileName', '$descr', $size, $age, '$location', '$vaccinated', 'status')";
     if (mysqli_query($connect, $sql) === true) {
         $class = "success";
         $message = "The entry below was successfully created <br>

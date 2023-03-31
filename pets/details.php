@@ -24,8 +24,14 @@ if(mysqli_num_rows($result)  > 0) {
     $tbody = "<tr>
 
       <td><img class='img-bigger' src='../pictures/" .$row['picture']. "'</td></tr>
-      <tr><td><h3>" .$row['name']."</h3></td></tr>
+
       <tr><td>" .$row['descr']."</td>
+      <tr><td>" .$row['breed']."</td>
+      <tr><td>" .$row['size']."</td>
+      <tr><td>" . $row['age'] . "</td> 
+      <tr><td>" .$row['location']."</td>
+      <tr><td>" .$row['vaccinated']."</td>
+      <tr><td>" .$row['status']."</td>
 
       </tr>";
   } else {
@@ -46,21 +52,18 @@ mysqli_close($connect);
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-<div class="manageProduct w-75 mt-3">
-  <h2 class="text-center m-4">Details for <?= $row['name']?></h2>
-  <table class='table'>
-    <thead class='table-secondary'>
-    </thead>
-    
-<tbody>
-  <?= $tbody;?>
-</tbody>
-  </table>
-</div>
-
-<div class="text-center w-25 mx-auto">
-<a href="index.php"><button class="btn btn-secondary">Back to Start</button></a>
-</div>
+  <div class="manageProduct w-75 mt-3">
+    <h2 class="text-center m-4">Details for <?= $row['name']?></h2>
+    <table class='table'>
+      <thead class='table-secondary'></thead>
+      <tbody>
+        <?= $tbody;?>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center w-25 mx-auto">
+  <a href="index.php"><button class="btn btn-secondary">Back to Start</button></a>
+  </div>
   
 </body>
 </html>
