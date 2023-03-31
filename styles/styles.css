@@ -68,6 +68,11 @@ div.login {
   background: linear-gradient(24deg, rgb(66, 84, 241) 20%, rgb(255, 90, 124) 100%);
 }
 
+.square {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
 .img-thumbnail {
   width: 100px;
   height: 100px;

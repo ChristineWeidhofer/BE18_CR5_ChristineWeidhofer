@@ -28,7 +28,9 @@ if (isset($_GET['id'])) {
         $f_name = $data['first_name'];
         $l_name = $data['last_name'];
         $email = $data['email'];
-        $date_birth = $data['date_of_birth'];
+        $phone = $data['phone'];
+        $location = $data['location'];
+        $date_of_birth = $data['date_of_birth'];
         $picture = $data['picture'];
     }
 }
@@ -39,6 +41,8 @@ if (isset($_POST["submit"])) {
     $f_name = $_POST['first_name'];
     $l_name = $_POST['last_name'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $location = $_POST['location'];
     $date_of_birth = $_POST['date_of_birth'];
     $id = $_POST['id'];
     //variable for upload pictures errors is initialized
@@ -47,9 +51,11 @@ if (isset($_POST["submit"])) {
     $picture = $pictureArray->fileName;
     if ($pictureArray->error === 0) {
         ($_POST["picture"] == "avatar.png") ?: unlink("pictures/{$_POST["picture"]}");
-        $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', email = '$email', date_of_birth = '$date_of_birth', picture = '$pictureArray->fileName' WHERE id = {$id}";
+        // $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', email = '$email', date_of_birth = '$date_of_birth', picture = '$pictureArray->fileName' WHERE id = {$id}";
+        $sql = "UPDATE `users` SET `first_name`='$f_name',`last_name`='$l_name',`date_of_birth`='$date_of_birth',`email`='$email',`phone`='$phone',`location`='$location',`picture`='$pictureArray->fileName' WHERE id = {$id}";
     } else {
-        $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', email = '$email', date_of_birth = '$date_of_birth' WHERE id = {$id}";
+        // $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', email = '$email', date_of_birth = '$date_of_birth' WHERE id = {$id}";
+        $sql = "UPDATE `users` SET `first_name`='$f_name',`last_name`='$l_name',`date_of_birth`='$date_of_birth',`email`='$email',`phone`='$phone',`location`='$location' WHERE id = {$id}";
     }
     if (mysqli_query($connect, $sql) === true) {
         $class = "alert alert-success";
@@ -101,8 +107,16 @@ mysqli_close($connect);
                     <td><input class="form-control" type="email" name="email" placeholder="Email" value="<?php echo $email ?>" /></td>
                 </tr>
                 <tr>
+                    <th>Phone Number</th>
+                    <td><input class="form-control" type="text" name="phone" placeholder="Phone Number" value="<?php echo $phone ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td><input class="form-control" type="text" name="location" placeholder="Location" value="<?php echo $location ?>" /></td>
+                </tr>
+                <tr>
                     <th>Date of birth</th>
-                    <td><input class="form-control" type="date" name="date_of_birth" placeholder="Date of birth" value="<?php echo $date_birth ?>" /></td>
+                    <td><input class="form-control" type="date" name="date_of_birth" placeholder="Date of birth" value="<?php echo $date_of_birth ?>" /></td>
                 </tr>
                 <tr>
                     <th>Picture</th>
