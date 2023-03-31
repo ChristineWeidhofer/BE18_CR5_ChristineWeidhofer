@@ -89,11 +89,12 @@ mysqli_close($connect);
                 echo $errMSG;
             }
             ?>
-
-            <input type="email" autocomplete="off" name="email" class="form-control mb-2" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" autocomplete="off" name="email" id="email" class="form-control mb-2" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
             <span class="text-danger"><?php echo $emailError; ?></span>
 
-            <input type="password" name="pass" class="form-control" placeholder="Your Password" maxlength="64" />
+            <label for="pass" class="form-label">Password</label>
+            <input type="password" name="pass" id="pass" class="form-control" placeholder="Your Password" maxlength="64" />
             <span class="text-danger"><?php echo $passError; ?></span>
             <hr />
             <button class="btn btn-block btn-tertiary m-0" type="submit" name="btn-login">Sign In</button>

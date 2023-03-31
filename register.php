@@ -190,7 +190,7 @@ mysqli_close($connect);
             <span class="text-danger"> <?php echo $passError; ?> </span>
 
             <hr />
-            <button type="submit" class="btn btn-block btn-tertiary" name="btn-signup">Sign Up</button>
+            <button type="submit" class="btn btn-block btn-tertiary m-0" name="btn-signup">Sign Up</button>
             <hr />
             <a class="btn btn-secondary" href="login.php">Sign in Here...</a>
         </form>

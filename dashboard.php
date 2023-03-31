@@ -59,7 +59,7 @@ mysqli_close($connect);
             </div>
             <div class="col-8 mt-2">
                 <h2>Users</h2>
-                <table class='table table-striped table-responsive'>
+                <table class='table table-striped table-responsive-md'>
                     <thead class='table-secondary'>
                         <tr>
                             <th>Picture</th>

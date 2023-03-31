@@ -55,7 +55,7 @@ mysqli_close($connect);
     <a href ="../dashboard.php"><button class='btn btn-tertiary' type="button">Dashboard</button></a>
 
   </div>
-  <table class='table table-responsive'>
+  <table class='table table-responsive-md'>
     <thead class='table-secondary'>
       <tr>
         <th>Picture</th>

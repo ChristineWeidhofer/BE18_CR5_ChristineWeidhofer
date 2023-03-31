@@ -75,7 +75,7 @@ mysqli_close($connect);
     <h2 class="text-center m-4">Our Pets</h2>
     <div class="text-center w-25 mx-auto d-flex justify-content-evenly">
     </div>
-    <table class='table table-responsive'>
+    <table class='table table-responsive-md'>
     <thead class='table-secondary'>
         <tr>
             <th>Picture</th>
