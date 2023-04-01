@@ -47,7 +47,12 @@ h6 {
 
 .manageProduct {   
   width: 90%;   
-  max-width: 1400px;    
+  max-width: 100%;    
+  margin: auto;
+}
+
+.details {
+  width: 75%;
   margin: auto;
 }
 
@@ -182,5 +187,9 @@ button:hover {
 @media screen and (max-width: 767px){
   .log-con-form {
     width: 100%;
+  }
+
+  .details {
+    width: 80%;
   }
 }

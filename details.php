@@ -43,6 +43,36 @@ if(mysqli_num_rows($result)  > 0) {
 mysqli_close($connect);
 ?>
 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details</title>
+ 
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div class="manageProduct mt-3 mx-auto">
+    <h2 class="text-center m-4">Details for </h2>
+    <table class='table details'>
+      <thead class='table-secondary'>
+      </thead>
+      <tbody>
+      
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-center mb-5 mx-auto d-flex justify-content-center align-items-center">
+    <a href="home.php"><button class="btn btn-secondary">Back to Start</button></a>
+    <a href="adopt.php?id="><button class="btn btn-tertiary" type="button">Adopt</button></a>
+  </div>
+  
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,24 +80,22 @@ mysqli_close($connect);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Details</title>
-  <?php require_once 'components/boot.php' ?>
-    <link rel="stylesheet" href="styles/styles.css">
+  <?php require_once 'components/boot.php'?>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div class="manageProduct mt-3 mx-auto">
     <h2 class="text-center m-4">Details for <?= $row['name']?></h2>
-    <table class='table details'>
-      <thead class='table-secondary'>
-      </thead>
+    <table class='table details mx-auto'>
+      <thead class='table-secondary'></thead>
       <tbody>
         <?= $tbody;?>
       </tbody>
     </table>
   </div>
-
   <div class="text-center mb-5 mx-auto d-flex justify-content-center align-items-center">
     <a href="home.php"><button class="btn btn-secondary">Back to Start</button></a>
-    <a href="adopt.php?id=<?= $row['id'] ?>"><button class="btn btn-tertiary" type="button">Adopt</button></a>
+    <a href="adopt.php?id="><button class="btn btn-tertiary" type="button">Adopt</button></a>
   </div>
   
 </body>

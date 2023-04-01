@@ -124,16 +124,16 @@ mysqli_close($connect);
     <header class="container">
         <div class="hero d-flex align-items-center">
             <img class="user" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
-            <h4 class="text-white ps-5">Hi, <?php echo ucfirst($row['first_name']); ?>!</h4>
+            <h4 class="text-white ps-2 ps-md-5">Hi, <?php echo ucfirst($row['first_name']); ?>!</h4>
         </div>
         <div class="d-flex justify-content-between">
             <div class="wrap">
                 <a class="btn btn-secondary mt-4 me-2" href="logout.php?logout">Sign Out</a>
                 <a class="btn btn-tertiary mt-4" href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
             </div>
-            <div>
+            <div class="d-flex flex-column flex-md-row">
                 <a class="btn btn-warning mt-4" href="home.php?btn=all">Show All</a>
-                <a class="btn btn-warning mt-4" href="home.php?btn=sub">Show Seniors Only</a>
+                <a class="btn btn-warning mt-4 ms-2" href="home.php?btn=sub">Show Seniors Only</a>
             </div>
         </div>
     </header>

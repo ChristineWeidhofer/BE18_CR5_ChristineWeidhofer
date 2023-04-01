@@ -19,18 +19,18 @@ if(isset($_POST["submit"])){
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <div class="container">
+  <div class="manageProduct">
   
     <form method="POST" class="log-con-form mx-auto" action="<?= $_SERVER["SCRIPT_NAME"] ?>">
     <h2>Contact</h2>
     <hr />
     <div class="mb-3">
-      <label for="EmailAddress" class="form-label">Email address</label>
+      <label for="EmailAddress" class="form-label">Email address:</label>
       <input type="email" class="form-control" id="EmailAddress" placeholder="name@example.com" name="email" required>
     </div>
     <div class="mb-3">
-      <label for="EmailTextarea" class="form-label">Your message goes here ...</label>
-      <textarea class="form-control" id="EmailTextarea" rows="3" name="msg" required></textarea>
+      <label for="EmailTextarea" class="form-label">Your message:</label>
+      <textarea class="form-control" id="EmailTextarea" placeholder="Your message goes here ..." rows="3" name="msg" required></textarea>
     </div>
     <div class="col-auto">
       <input type="submit" class="btn btn-secondary mb-3" name="submit" value="Send">
