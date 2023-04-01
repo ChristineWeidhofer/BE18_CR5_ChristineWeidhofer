@@ -65,11 +65,10 @@ mysqli_close($connect);
         <th>Details</th>
         <th>Action</th>
       </tr>
-    </thead>
-    
-<tbody>
-  <?= $tbody;?>
-</tbody>
+    </thead>   
+    <tbody>
+      <?= $tbody;?>
+    </tbody>
   </table>
 </div>
   

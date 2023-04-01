@@ -13,8 +13,6 @@ if (! isset($_SESSION['adm']) && !isset($_SESSION['user' ])) {
   exit;
 }
 
-// echo $_GET["id"]; // just to check
-
 $sql = "SELECT * FROM animals WHERE id = $_GET[id]";
 $result = mysqli_query($connect ,$sql);
 $tbody = "";

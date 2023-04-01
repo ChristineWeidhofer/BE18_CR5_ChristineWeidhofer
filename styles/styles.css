@@ -17,7 +17,7 @@ html {
 body {
   margin-top: 2rem;
   background-color: #F2F5FB;
-  background-image: url('../assets/img/hero-bg.png');
+  background-image: url('../assets-template/img/hero-bg.png');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -64,7 +64,7 @@ div.login {
   position: absolute;
   right: 0px;
   top: 300px;
-  background-image: url('../assets/img/features-3.png');
+  background-image: url('../assets-template/img/features-3.png');
   background-size: cover;
 }
 

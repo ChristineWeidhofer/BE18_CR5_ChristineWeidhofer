@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["submit"])){
   $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL); // simple validation for email
-  $msg = filter_var($_POST["msg"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  $msg = filter_var($_POST["msg"], FILTER_SANITIZE_FULL_SPECIAL_CHARS); //validation for string
   $headers = "FROM : ". $email . "\r\n";
   $myEmail = "irishsinxtine@gmail.com";
   if(mail($myEmail, "You got a new message coming from the contact form on your website!", $msg, $headers)){

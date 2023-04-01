@@ -4,18 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>Adopt A Pet</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
   <!-- Favicons -->
   <link href="assets-template/img/favicon.png" rel="icon">
   <link href="assets-template/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
   <!-- Vendor CSS Files -->
   <link href="assets-template/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets-template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,10 +19,8 @@
   <link href="assets-template/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets-template/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets-template/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="assets-template/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -34,12 +28,10 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
       <a href="index.php" class="logo d-flex align-items-center text-decoration-none">
         <img src="assets-template/img/paw.png" alt="black paw print of a cat">
         <span class="d-none d-sm-inline-block">Adopt A Pet</span>
       </a>
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link active" href="./index.php">Home</a></li>
@@ -49,7 +41,6 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
 
@@ -76,24 +67,19 @@
         </div>
       </div>
     </div>
-
   </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
-
       <div class="container" data-aos="fade-up">
-
         <header class="section-header">
           <h2>Testimonials</h2>
           <h3 data-aos="fade-up">What they are saying about us</h3>
         </header>
-
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
           <div class="swiper-wrapper">
-
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -109,7 +95,6 @@
                 </div>
               </div>
             </div><!-- End testimonial item -->
-
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -125,7 +110,6 @@
                 </div>
               </div>
             </div><!-- End testimonial item -->
-
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -141,13 +125,10 @@
                 </div>
               </div>
             </div><!-- End testimonial item -->
-
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
       </div>
-
     </section><!-- End Testimonials Section -->
 
   </main><!-- End #main -->
@@ -171,7 +152,6 @@
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
-
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
@@ -180,7 +160,6 @@
               <li><i class="bi bi-chevron-right"></i> <a href="login.php">Login</a></li>
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contact Us</h4>
             <p>
@@ -190,13 +169,10 @@
               <strong>Phone:</strong> +1 5589 55488 55<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
-
           </div>
-
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Adopt A Pet</span></strong>. All Rights Reserved

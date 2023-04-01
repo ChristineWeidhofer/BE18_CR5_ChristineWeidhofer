@@ -51,10 +51,8 @@ if (isset($_POST["submit"])) {
     $picture = $pictureArray->fileName;
     if ($pictureArray->error === 0) {
         ($_POST["picture"] == "avatar.png") ?: unlink("pictures/{$_POST["picture"]}");
-        // $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', email = '$email', date_of_birth = '$date_of_birth', picture = '$pictureArray->fileName' WHERE id = {$id}";
         $sql = "UPDATE `users` SET `first_name`='$f_name',`last_name`='$l_name',`date_of_birth`='$date_of_birth',`email`='$email',`phone`='$phone',`location`='$location',`picture`='$pictureArray->fileName' WHERE id = {$id}";
     } else {
-        // $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', email = '$email', date_of_birth = '$date_of_birth' WHERE id = {$id}";
         $sql = "UPDATE `users` SET `first_name`='$f_name',`last_name`='$l_name',`date_of_birth`='$date_of_birth',`email`='$email',`phone`='$phone',`location`='$location' WHERE id = {$id}";
     }
     if (mysqli_query($connect, $sql) === true) {

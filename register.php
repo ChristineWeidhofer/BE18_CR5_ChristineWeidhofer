@@ -1,10 +1,10 @@
 <?php
 session_start(); // start a new session or continues the previous
 if (isset($_SESSION['user']) != "") {
-    header("Location: home.php"); // redirects to home.php
+    header("Location: home.php");
 }
 if (isset($_SESSION['adm']) != "") {
-    header("Location: dashboard.php"); // redirects to home.php
+    header("Location: dashboard.php");
 }
 require_once 'components/db_connect.php';
 require_once 'components/file_upload.php';
@@ -106,10 +106,6 @@ if (isset($_POST['btn-signup'])) {
     $password = hash('sha256', $pass);
     // if there's no error, continue to signup
     if (!$error) {
-
-        // $query = "INSERT INTO users(first_name, last_name, password, date_of_birth, email, picture)
-        //         VALUES('$fname', '$lname', '$password', '$date_of_birth', '$email', '$picture->fileName')"; old query
-
         $query = "INSERT INTO `users`(`first_name`, `last_name`, `password`, `date_of_birth`, `email`, `phone`, `location`, `picture`) VALUES ('$fname','$lname','$password','$date_of_birth','$email','$phone','$location','$picture->fileName')";
                 
         $res = mysqli_query($connect, $query);
@@ -141,7 +137,6 @@ mysqli_close($connect);
 </head>
 
 <body>
-    <!-- enter h1 and error message in here with if-statement-->
     <div class="container">
         <form class="w-75 mx-auto" method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']); ?>" autocomplete="off" enctype="multipart/form-data">
             <h2>Sign Up.</h2>
@@ -149,10 +144,11 @@ mysqli_close($connect);
             <?php
             if (isset($errMSG)) {
             ?>
-                <div class="alert alert-<?php echo $errTyp ?>">
-                    <p><?php echo $errMSG; ?></p>
-                    <p><?php echo $uploadError; ?></p>
-                </div>
+            
+            <div class="alert alert-<?php echo $errTyp ?>">
+                <p><?php echo $errMSG; ?></p>
+                <p><?php echo $uploadError; ?></p>
+            </div>
 
             <?php
             }
