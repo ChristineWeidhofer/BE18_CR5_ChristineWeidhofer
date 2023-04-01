@@ -18,9 +18,33 @@ if ($_GET['id']) {
   $sql = "SELECT * FROM animals WHERE id = {$id}";
   $result = mysqli_query($connect, $sql);
   $data = mysqli_fetch_assoc($result);
-  if (mysqli_num_rows($result) == 1) {
+  $fieldset = "";
+  if ((mysqli_num_rows($result) == 1) && ($data['status'] == 'Available')) { // check if pet status is "Available", put info out
     $name = $data['name'];
     $picture = $data['picture'];
+    $fieldset = "   
+    <fieldset class='w-75 mt-5 mx-auto p-4 bg-light rounded shadow'>
+    <h2 class='mb-3'>Adoption Request<img class='img-thumbnail rounded-circle ms-4' src='pictures/" .$picture. "' alt='" .$name. "'></h2>
+        <h5>You have selected the pet below:</h5>
+        <table class='table w-75 mt-3'>
+            <tr>
+                <td class='fs-4'>" .$name. "</td>
+            </tr>
+        </table>
+
+        <h3 class='mb-4'>Do you really want to adopt this pet?</h3>
+        <form method='post'>
+            <input type='hidden' name='id' value='" .$id. "' />
+            <input type='hidden' name='picture' value='" .$picture. "' />
+            <button class='btn btn-tertiary' type='submit'>Yes, adopt it!</button>
+            <a href='home.php'><button class='btn btn-secondary' type='button'>No, go back!</button></a>
+        </form>
+    </fieldset>
+    ";
+  } else { // info that pet is not available for adoption
+    $fieldset = "<h3 class='text-center m-5'>I am currently not available for adoption!</h3>
+    <div class='container text-center'><a href='home.php'><button class='btn btn-secondary' type='button'>OK, go back!</button></a></div>
+    ";
   }
 }
 
@@ -57,22 +81,6 @@ mysqli_close($connect);
     <div class="<?php echo $class; ?>" role="alert">
         <p><?php echo ($message) ?? ''; ?></p>
     </div>
-    <fieldset class="w-75 mt-5 mx-auto p-4 bg-light rounded shadow">
-        <h2 class='mb-3'>Adoption Request<img class='img-thumbnail rounded-circle ms-4' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></h2>
-        <h5>You have selected the pet below:</h5>
-        <table class="table w-75 mt-3">
-            <tr>
-                <td class="fs-4"><?php echo $name ?></td>
-            </tr>
-        </table>
-
-        <h3 class="mb-4">Do you really want to adopt this pet?</h3>
-        <form method="post">
-            <input type="hidden" name="id" value="<?php echo $id ?>" />
-            <input type="hidden" name="picture" value="<?php echo $picture ?>" />
-            <button class="btn btn-tertiary" type="submit">Yes, adopt it!</button>
-            <a href="home.php"><button class="btn btn-secondary" type="button">No, go back!</button></a>
-        </form>
-    </fieldset>
+  <?= $fieldset?>
 </body>
 </html>

@@ -63,7 +63,7 @@ mysqli_close($connect);
   </div>
   <div class="text-center mb-5 mx-auto d-flex justify-content-center align-items-center">
     <a href="home.php"><button class="btn btn-secondary">Back to Start</button></a>
-    <a href="adopt.php?id="><button class="btn btn-tertiary" type="button">Adopt</button></a>
+    <a href="adopt.php?id=<?php echo $id; ?>"><button class="btn btn-tertiary" type="button">Adopt</button></a>
   </div>
   
 </body>
