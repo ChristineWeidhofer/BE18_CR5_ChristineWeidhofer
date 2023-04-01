@@ -51,13 +51,13 @@ mysqli_close($connect);
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-2">
+            <div class="col-10 col-md-3 col-lg-2">
                 <img class="img-thumbnail user" src="pictures/portrait_comic.png" alt="Admin avatar">
                 <p class="">Administrator</p>
                 <a class="btn btn-tertiary" href="pets/index.php">Pets</a>
                 <a class="btn btn-secondary" href="logout.php?logout">Sign Out</a>
             </div>
-            <div class="col-8 mt-2">
+            <div class="col-10 col-md-9 col-lg-10 mt-2">
                 <h2>Users</h2>
                 <table class='table table-striped table-responsive-md'>
                     <thead class='table-secondary'>

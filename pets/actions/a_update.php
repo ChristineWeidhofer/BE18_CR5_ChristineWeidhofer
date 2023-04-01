@@ -60,7 +60,7 @@ if ($_POST) {
         <meta charset="UTF-8">
         <title>Update</title>
         <?php require_once '../../components/boot.php'?> 
-        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../../styles/styles.css">
     </head>
     <body>
         <div class="container">
@@ -70,8 +70,8 @@ if ($_POST) {
             <div class="alert alert-<?php echo $class;?>" role="alert">
                 <p><?php echo ($message) ?? ''; ?></p>
                 <p><?php echo ($uploadError) ?? ''; ?></p>
-                <a href='../update.php?id=<?=$id;?>'><button class="btn btn-warning" type='button'>Back to Update</button></a>
-                <a href='../index.php'><button class="btn btn-success" type='button'>Back to Start</button></a>
+                <a href='../update.php?id=<?=$id;?>'><button class="btn btn-secondary" type='button'>Back to Update</button></a>
+                <a href='../index.php'><button class="btn btn-tertiary" type='button'>Back to Start</button></a>
             </div>
         </div>
     </body>

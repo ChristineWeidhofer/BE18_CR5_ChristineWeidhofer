@@ -45,6 +45,12 @@ h6 {
   color: #012970;
 }
 
+.manageProduct {   
+  width: 90%;   
+  max-width: 1400px;    
+  margin: auto;
+}
+
 /* -------------- illustrations bottom right ---------------- */
 
 div.login {
@@ -55,10 +61,6 @@ div.login {
   top: 300px;
   background-image: url('../assets/img/features-3.png');
   background-size: cover;
-}
-
-.manageProduct {          
-  margin: auto;
 }
 
 /* -------------- images ------------------ */
@@ -88,9 +90,16 @@ div.login {
 .img-bigger {
   width: 400px;
   height: 400px;
+  aspect-ratio: 2/3;
   object-fit: cover;
-  border: 5px solid white;
-  border-radius: 1rem;
+  border-style: solid;
+  border-color: white;
+  border-width: 1rem 1rem 5rem 1rem;
+  /* border-radius: 1rem; */
+}
+
+.rotate {
+  transform: rotate(3deg);
 }
 
 /* -------------------- tables ---------------------- */
@@ -103,10 +112,15 @@ th {
 td, th {          
   text-align: center;
   vertical-align: middle;
+  border: none;
 }
 
 tr {
   text-align: center;
+}
+
+.table>:not(:first-child) {
+  border: none;
 }
 
 /* -------------------- buttons ---------------------- */

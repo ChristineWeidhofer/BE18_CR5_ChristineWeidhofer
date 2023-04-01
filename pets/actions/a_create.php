@@ -53,7 +53,7 @@ if ($_POST) {
         <meta charset="UTF-8">
         <title>Update</title>
         <?php require_once '../../components/boot.php'?>
-        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../../styles/styles.css">
     </head>
     <body>
         <div class="container">
@@ -65,7 +65,7 @@ if ($_POST) {
                 <p><?php echo ($uploadError) ?? ''; ?></p>
             </div>
             <div class="text-center w-25 mx-auto">
-                <a href="../index.php"><button class="btn btn-warning btn-gradient text-dark">Back to Start</button></a>
+                <a href="../index.php"><button class="btn btn-warning btn-tertiary">Back to Start</button></a>
             </div>
         </div>
     </body>

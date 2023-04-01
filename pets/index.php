@@ -48,9 +48,9 @@ mysqli_close($connect);
   <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-<div class="manageProduct w-75 mt-3">
+<div class="manageProduct mt-3">
   <h2 class="text-center m-4">Our Pets</h2>
-  <div class="text-center w-25 mx-auto d-flex justify-content-evenly">
+  <div class="text-center w-50 mx-auto d-flex justify-content-evenly">
     <a href="create.php"><button class="btn btn-warning btn-gradient text-dark mb-4">Add Pet</button></a>
     <a href ="../dashboard.php"><button class='btn btn-tertiary' type="button">Dashboard</button></a>
 

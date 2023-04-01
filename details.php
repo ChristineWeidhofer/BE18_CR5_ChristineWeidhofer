@@ -15,7 +15,8 @@ if (! isset($_SESSION['adm']) && !isset($_SESSION['user' ])) {
 
 // echo $_GET["id"]; // just to check
 
-$sql = "SELECT * FROM animals WHERE id = $_GET[id]";
+$id = $_GET['id'];
+$sql = "SELECT * FROM animals WHERE id = $id";
 $result = mysqli_query($connect ,$sql);
 $tbody = "";
 
@@ -23,15 +24,16 @@ if(mysqli_num_rows($result)  > 0) {
   $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
     $tbody = "<tr>
 
-    <td><img class='img-bigger' src='./pictures/" .$row['picture']. "'</td></tr>
+    <td><img class='img-bigger shadow-lg rotate m-4' src='./pictures/" .$row['picture']. "'</td></tr>
 
-    <tr><td>" .$row['descr']."</td>
-    <tr><td>" .$row['breed']."</td>
-    <tr><td>" .$row['size']."</td>
-    <tr><td>" . $row['age'] . "</td> 
-    <tr><td>" .$row['location']."</td>
-    <tr><td>" .$row['vaccinated']."</td>
-    <tr><td>" .$row['status']."</td>
+    <tr><td class='text-muted fs-4'>" .$row['descr']."</td>
+    <tr><td><h3>Hard Facts:</h3></td>
+    <tr><td class='fs-5'>Breed: " .$row['breed']."</td>
+    <tr><td class='fs-5'>Size: " .$row['size']." cm</td>
+    <tr><td class='fs-5'>Age: " . $row['age'] . " years</td> 
+    <tr><td class='fs-5'>Location: " .$row['location']."</td>
+    <tr><td class='fs-5'>Vaccinated: " .$row['vaccinated']."</td>
+    <tr><td class='fs-5'>Status: " .$row['status']."</td>
 
     </tr>";
   } else {
@@ -52,9 +54,9 @@ mysqli_close($connect);
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <div class="manageProduct w-75 mt-3">
+  <div class="manageProduct mt-3 mx-auto">
     <h2 class="text-center m-4">Details for <?= $row['name']?></h2>
-    <table class='table'>
+    <table class='table details'>
       <thead class='table-secondary'>
       </thead>
       <tbody>
@@ -63,8 +65,9 @@ mysqli_close($connect);
     </table>
   </div>
 
-  <div class="text-center w-25 mx-auto">
-  <a href="home.php"><button class="btn btn-secondary">Back to Start</button></a>
+  <div class="text-center mb-5 mx-auto d-flex justify-content-center align-items-center">
+    <a href="home.php"><button class="btn btn-secondary">Back to Start</button></a>
+    <a href="adopt.php?id=<?= $row['id'] ?>"><button class="btn btn-tertiary" type="button">Adopt</button></a>
   </div>
   
 </body>

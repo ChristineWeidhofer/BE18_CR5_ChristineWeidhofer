@@ -38,7 +38,7 @@ if ($_POST) {
         <meta charset="UTF-8">
         <title>Delete</title>
         <?php require_once '../../components/boot.php'?>  
-        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../../styles/styles.css">
     </head>
     <body>
         <div class="container">
@@ -47,7 +47,7 @@ if ($_POST) {
             </div>
             <div class="alert alert-<?=$class;?>" role="alert">
                 <p><?=$message;?></p>
-                <a href='../index.php'><button class="btn btn-success" type='button'>Back to Start</button></a>
+                <a href='../index.php'><button class="btn btn-tertiary" type='button'>Back to Start</button></a>
             </div>
         </div>
     </body>

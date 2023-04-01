@@ -20,7 +20,7 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 $sql = "SELECT * FROM animals";
 $result = $connect->query($sql);
 $card=''; 
-if(mysqli_num_rows($result)  > 0) {    
+if(mysqli_num_rows($result) > 0 || (isset($_GET['btn']) && $_GET['btn']=="all")) {    
     while($row2 = mysqli_fetch_array($result, MYSQLI_ASSOC)){      
         if ($row2['age'] > 8) { // checking the age of the pet and putting a checkmark or an x (senior or not)
             $card .= "
@@ -132,13 +132,14 @@ mysqli_close($connect);
                 <a class="btn btn-tertiary mt-4" href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
             </div>
             <div>
+                <a class="btn btn-warning mt-4" href="home.php?btn=all">Show All</a>
                 <a class="btn btn-warning mt-4" href="home.php?btn=sub">Show Seniors Only</a>
             </div>
         </div>
     </header>
     <main>
         <!-- make content with dishes -->
-        <div class="manageProduct w-75 mt-3">
+        <div class="manageProduct mt-3">
             <h2 class="text-center m-4">Our Pets</h2>
             <div class='my-2 mx-auto'>
                 <div class='row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4'>

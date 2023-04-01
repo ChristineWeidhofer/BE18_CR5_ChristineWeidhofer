@@ -52,7 +52,7 @@ if (!isset ($_SESSION['adm']) && !isset($_SESSION['user'])) {
                         <th>Location</th>
                         <td>
                         <select class='form-select' type="text" name="Location" id="location">
-                        <option value="Wien">Wien</option>
+                        <option value="Wien" selected>Wien</option>
                         <option value="Graz">Graz</option>
                         <option value="Linz">Linz</option>
                         </select>
@@ -62,7 +62,7 @@ if (!isset ($_SESSION['adm']) && !isset($_SESSION['user'])) {
                         <th>Vaccinated</th>
                         <td>
                         <select class='form-select' type="text" name="vaccinated" id="vaccinated">
-                        <option value="Yes">Yes</option>
+                        <option value="Yes" selected>Yes</option>
                         <option value="No">No</option>
                         </select>
                         </td>
@@ -71,7 +71,7 @@ if (!isset ($_SESSION['adm']) && !isset($_SESSION['user'])) {
                         <th>Status</th>
                         <td>
                         <select class='form-select' type="text" name="status" id="status">
-                        <option value="Available">Available</option>
+                        <option value="Available" selected>Available</option>
                         <option value="Adopted">Adopted</option>
                         </select>
                         </td>
