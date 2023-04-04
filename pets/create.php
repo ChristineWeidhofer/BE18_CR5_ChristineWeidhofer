@@ -50,7 +50,7 @@ if (!isset ($_SESSION['adm']) && !isset($_SESSION['user'])) {
                     <tr>
                         <th>Location</th>
                         <td>
-                        <select class='form-select' type="text" name="Location" id="location">
+                        <select class='form-select' type="text" name="location" id="location">
                         <option value="Wien" selected>Wien</option>
                         <option value="Graz">Graz</option>
                         <option value="Linz">Linz</option>

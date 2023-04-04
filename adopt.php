@@ -10,16 +10,19 @@ if (isset($_SESSION["adm"])) {
   header("Location: dashboard.php");
   exit;
 }
-//initial bootstrap class for the confirmation message
+//initial bootstrap class for the confirmation message ------------missing: add proper adoption update on pet_adoption ---------
 $class = 'd-none';
 //the GET method will show the info from the animal to be adopted
 if ($_GET['id']) {
   $id = $_GET['id'];
-  $sql = "SELECT * FROM animals WHERE id = {$id}";
+  $sql = "SELECT * FROM animals WHERE id = {$id} and status = 'Available'";
+  // $sql = "SELECT animals.*, users.last_name, pet_adoption.adopt_date FROM animals
+  // JOIN pet_adoption ON pet_adoption.fk_animalID = animals.id
+  // JOIN users ON pet_adoption.fk_userID = users.id;";
   $result = mysqli_query($connect, $sql);
   $data = mysqli_fetch_assoc($result);
   $fieldset = "";
-  if ((mysqli_num_rows($result) == 1) && ($data['status'] == 'Available')) { // check if pet status is "Available", put info out
+  if ((mysqli_num_rows($result) == 1)) { // check if pet status is "Available", put info out
     $name = $data['name'];
     $picture = $data['picture'];
     $fieldset = "   
@@ -48,12 +51,14 @@ if ($_GET['id']) {
   }
 }
 
-  //the POST method will put the "Adopted" status on the pet
+  //the POST method will put the "Adopted" status on the pet and insert date and ids to pet_adoption.
   if ($_POST) {
     $id = $_POST['id'];
 
     $sql = "UPDATE `animals` SET `status`='Adopted' WHERE id = {$id}";
-    if ($connect->query($sql) === TRUE) {
+    $sql2 = "INSERT INTO `pet_adoption`(`adopt_date`, `fk_userID`, `fk_animalID`) VALUES (now(), $_SESSION[user], $id)";
+
+    if ($connect->query($sql) === TRUE && $connect->query($sql2) === TRUE) {
       $class = "alert alert-success";
       $message = "Successfully Adopted!";
       header("refresh:3;url=home.php");
@@ -63,6 +68,7 @@ if ($_GET['id']) {
       header("refresh:3;url=home.php");
     }
   }
+
 mysqli_close($connect);
 ?>
 

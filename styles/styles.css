@@ -192,4 +192,9 @@ button:hover {
   .details {
     width: 80%;
   }
+
+  .img-bigger {
+    width: 300px;
+    height: 300px;
+  }
 }
