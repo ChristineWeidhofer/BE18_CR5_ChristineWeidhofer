@@ -10,7 +10,7 @@ if (isset($_SESSION["adm"])) {
   header("Location: dashboard.php");
   exit;
 }
-//initial bootstrap class for the confirmation message ------------missing: add proper adoption update on pet_adoption ---------
+//initial bootstrap class for the confirmation message 
 $class = 'd-none';
 //the GET method will show the info from the animal to be adopted
 if ($_GET['id']) {
